@@ -1,8 +1,8 @@
 # Subagent Model Router for Pi
 
-A tier-based model and thinking-level router for subagents in the [Pi coding agent](https://pi.dev).
+A companion extension for [`pi-herdr-subagents`](https://github.com/0xRichardH/pi-herdr-subagents) that adds tier-based model and thinking-level routing to subagents in the [Pi coding agent](https://pi.dev).
 
-`pi-subagent-model-router` intercepts `subagent` tool calls (from `pi-herdr-subagents`) and assigns an authenticated model and clamped thinking level based on abstract capability tiers (`fast`, `balanced`, `deep`) and the active provider in the parent session. This keeps agent definitions portable across providers (`antigravity`, `openai-codex`, `kiro`, `amazon-bedrock`, `openai`, `anthropic`, `google`) without hardcoding provider-specific model IDs into every agent file.
+`pi-subagent-model-router` hooks into the `subagent` tool exposed by [`pi-herdr-subagents`](https://github.com/0xRichardH/pi-herdr-subagents) (`npm:pi-herdr-subagents`) and assigns an authenticated model and clamped thinking level based on abstract capability tiers (`fast`, `balanced`, `deep`) and the active provider in the parent session. This keeps your subagent definitions (`scout`, `worker`, `planner`, `reviewer`, `visual-tester`, and custom agents) portable across providers (`antigravity`, `openai-codex`, `kiro`, `amazon-bedrock`, `openai`, `anthropic`, `google`) without hardcoding provider-specific model IDs into every agent file.
 
 ## Features
 
@@ -18,19 +18,20 @@ A tier-based model and thinking-level router for subagents in the [Pi coding age
 
 - Node.js >= 22.5.0 (for `--experimental-strip-types` when running tests)
 - [Pi coding agent](https://pi.dev) >= 1.3.0
-- [`pi-herdr-subagents`](https://github.com/0xRichardH/pi-herdr-subagents) (or any extension exposing the `subagent` tool with `{ agent, model, thinking }` input)
+- [`pi-herdr-subagents`](https://github.com/0xRichardH/pi-herdr-subagents) (`npm:pi-herdr-subagents` on npm, or `git:https://github.com/0xRichardH/pi-herdr-subagents`)
 
 ## Installation
 
 ### Install via Pi CLI
 
-Install directly from GitHub:
+Ensure [`pi-herdr-subagents`](https://github.com/0xRichardH/pi-herdr-subagents) is installed alongside `pi-subagent-model-router`:
 
 ```bash
+pi install npm:pi-herdr-subagents
 pi install git:https://github.com/gierdo/pi-subagent-model-router
 ```
 
-Or install from a local checkout:
+Or install `pi-subagent-model-router` from a local checkout:
 
 ```bash
 pi install ./path/to/pi-subagent-model-router
