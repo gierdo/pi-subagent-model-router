@@ -1,0 +1,28 @@
+{
+  "name": "pi-subagent-model-router",
+  "version": "0.1.0",
+  "description": "Tier-based model and thinking router for Pi subagents",
+  "keywords": [
+    "pi-package"
+  ],
+  "license": "MIT",
+  "author": "Dominikus Gierlach",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gierdo/pi-subagent-model-router"
+  },
+  "type": "module",
+  "main": "./index.ts",
+  "pi": {
+    "extensions": [
+      "./index.ts"
+    ]
+  },
+  "scripts": {
+    "test": "node --test --experimental-strip-types test/*.test.ts"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-coding-agent": "*"
+  }
+}
